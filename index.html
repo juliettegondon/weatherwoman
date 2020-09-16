@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+   <head>
+      <title> WEATHER DASHBOARD </title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <link rel="stylesheet" href="./assets/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="./assets/fav.ico"/>
+      <!-- <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">     -->
+      <!--navbar -->
+      <nav class="navbar navbar-dark bg-primary">
+         <a class="navbar-brand">
+         <img src="./assets/logo.svg" width="50" height="30" class="d-inline-block align-top" alt="weather icon" loading="lazy">
+         Weather Dashboard
+         </a>
+      </nav>
+      <!--card/fixed background image-->
+      <body>
+      <div class="container">
+         <div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+               <div style="height: 40px"></div>
+               <form class="container col-9">
+                <h1>Search for local weather</h1>
+                  <div class="input-group">
+                      <!-- search for cities around the world here -->
+                      <input type="text" id="city-input" class="col-9" placeholder="enter a city">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" id = "btn" class="col-sm-1" type='submit'></button>
+                      </div>
+                  </div>
+                  <!-- display cities here -->
+                  <div id="cities"></div>
+          </form>
+          </div>
+        </head>
+            <!-- current weather display -->
+        <div class="container col-7">
+            <div class="current-weather">
+                <div class="city"></div>
+                <div id="moment"></div>
+                <div class="icon"></div>
+                <div id='temperature'>Temperature:</div>
+                <br>
+                <br>
+                <div id='humidity'>Humidity:</div>
+                <br>
+                <br>
+                <div id='windspeed'>Wind Speed:</div>
+                <br>
+                <br>
+                <div id='uvIndex'>UV Index: </div>
+                <br>
+                <br>
+                 <!-- 5 day forecast -->
+                 <h2> 5-Day Forecast:</h2>
+                 <div class="row" id="5dayforecast">
+                <br>
+                <br>
+            </div>
+            <div class="container">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><!--jquery cdn script-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script><!--moment.js-->
+    <script type="text/javascript" src="./assets/script.js"></script> <!--local script-->
+   </body>
+</html>
