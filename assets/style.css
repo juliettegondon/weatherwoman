@@ -21,14 +21,18 @@ body {
 h1 {
     font-family: 'Courier New', Courier, monospace;
 }
-.green {
-  background-color: green;
+.favorableUV {
+  color: green;
 }
-.yellow {
-  background-color: yellow
+.moderateUV {
+ color: yellow
 }
-.red {
-  background-color: red
+.severeUV {
+  color: red
+}
+
+p {
+  font-size: 25px;
 }
 
 
