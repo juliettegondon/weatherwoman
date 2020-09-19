@@ -8,14 +8,34 @@ var fivedayURL = "https://api.openweathermap.org/data/2.5/forecast?"
 $( "#btn" ).on('click', function(event) {
     event.preventDefault();
     var inputValue = $( "#city-input").val();
-    console.log(inputValue)
     var cityName = 'q=' + inputValue
-    var pastCities = [];
+    
+   
 
-    pastCities = JSON.parse(localStorage.getItem("pastCities")) || [];
+    var pastCities = JSON.parse(localStorage.getItem("pastCities")) || [];
     pastCities.push(cityName);
     localStorage.setItem("pastCities", JSON.stringify(pastCities));
-    console.log(localStorage);
+ /*    console.log(localStorage); */
+    var cityList = $("#searched-cities-list")
+ 
+
+   pastCities.forEach((element, index, array) => {
+       var correctName = element.slice(2)
+       cityList.append(`<li class='searched-city-button'>${correctName}</li>`)
+
+      
+   });
+
+ /*        console.log('EACH at currentItem -->', currentItem) */
+
+/*  $('.searched-cities-button').each(element => {
+     element.on('click', function(){
+         console.log(element + 'was clicked')
+     })
+ }) */
+
+
+     // need help getting these to display in div id #searchedCities line 58
    //ajax call to current weather api's
     $.ajax({
         url: baseURL + cityName + "&units=imperial" + apiKey,
@@ -34,9 +54,9 @@ $( "#btn" ).on('click', function(event) {
         $(".city").html("<h1>" + response.name + " Weather Details </h1>");
         // moment JS to get current date
         $("#moment").text("Today is " + moment().format('MMMM Do YYYY'));
-        $("#windspeed").text("Wind speed: " + response.wind.speed);
-        $("#temperature").text("Temperature: " + response.main.temp);
-        $("#humidity").text("Humidity: " + response.main.humidity);
+        $("#windspeed").text("Wind speed: " + response.wind.speed + " mph");
+        $("#temperature").text("Temperature: " + response.main.temp + " F");
+        $("#humidity").text("Humidity: " + response.main.humidity + "%");
         
 
     console.log(response)
@@ -56,7 +76,7 @@ $( "#btn" ).on('click', function(event) {
         console.log(lat, lon)
 //ajax call to uvindex using variables from 5 day
         // uv index call retrieved value and used to change class color
-        var uvQuery = "http://api.openweathermap.org/data/2.5/uvi/forecast?&appid=c84a8aa0a886f082f2e927a6d245e491&lat=" +lat + "&lon=" + lon;
+        var uvQuery = "https://api.openweathermap.org/data/2.5/uvi/forecast?&appid=c84a8aa0a886f082f2e927a6d245e491&lat=" +lat + "&lon=" + lon;
         $.ajax({
             url: uvQuery,
             method: "GET",
@@ -78,20 +98,32 @@ $( "#btn" ).on('click', function(event) {
             method: "GET",
         })
         .then(function(fivedayResponse){
-            var fivedayTemp = fivedayResponse.list[0].main.temp;
-            console.log(fivedayTemp);
-            var fivedayHumid = fivedayResponse.list[0].main.humidity;
-            console.log(fivedayHumid);
-            $("#temp1").text("Temperature: " + fivedayTemp);
-            $("#humid1").text("Humidity: " + fivedayHumid);
-            $("#temp2").text("Temperature: " + fivedayTemp);
-            $("#humid2").text("Humidity: " + fivedayHumid);
-            $("#temp3").text("Temperature: " + fivedayTemp);
-            $("#humid3").text("Humidity: " + fivedayHumid);
-            $("#temp4").text("Temperature: " + fivedayTemp);
-            $("#humid4").text("Humidity: " + fivedayHumid);
-            $("#temp5").text("Temperature: " + fivedayTemp);
-            $("#humid5").text("Humidity: " + fivedayHumid);
+            console.log(fivedayResponse);
+            var day1t = fivedayResponse.list[0].main.temp;
+            var day2t = fivedayResponse.list[1].main.temp;
+            var day3t = fivedayResponse.list[2].main.temp;
+            var day4t = fivedayResponse.list[3].main.temp;
+            var day5t = fivedayResponse.list[4].main.temp;
+            var day1h = fivedayResponse.list[0].main.humidity;
+            var day2h = fivedayResponse.list[1].main.humidity;
+            var day3h = fivedayResponse.list[2].main.humidity;
+            var day4h = fivedayResponse.list[3].main.humidity;
+            var day5h = fivedayResponse.list[4].main.humidity;
+      /*       console.log(day1t,day2t,day3t,day4t,day5t);
+            console.log(day1h,day2h,day3h,day4h,day5h); */
+            
+ 
+            ////// 5 day forecast
+            $("#temp1").text("Temperature: " + day1t);
+            $("#humid1").text("Humidity: " + day1h);
+            $("#temp2").text("Temperature: " + day2t);
+            $("#humid2").text("Humidity: " + day2h);
+            $("#temp3").text("Temperature: " + day3t);
+            $("#humid3").text("Humidity: " + day3h);
+            $("#temp4").text("Temperature: " + day4t);
+            $("#humid4").text("Humidity: " + day4h);
+            $("#temp5").text("Temperature: " + day5t);
+            $("#humid5").text("Humidity: " + day5h);
         })
         
     })

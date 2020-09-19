@@ -20,8 +20,8 @@
       <body>
       <div class="container">
          <div class="card border-0 shadow my-5">
-            <div class="card-body p-5">
-               <div style="height: 40px"></div>
+            <div class="card-body">
+               <div style="height: 40px" ></div>
                <form class="container col-9">
                 <h1>Search for local weather</h1>
                   <div class="input-group">
@@ -32,12 +32,14 @@
                       </div>
                   </div>
                   <!-- display cities here -->
+                  <div class="container">
+                    <div class="card border-0 shadow my-5">
                   <div id="cities"></div>
           </form>
           </div>
         </head>
             <!-- current weather display -->
-        <div class="container col-7">
+        <div class="container col-12">
             <div class="current-weather">
                 <div class="city"></div>
                 <div id="moment"></div>
@@ -56,7 +58,7 @@
                 <br>
                  <!-- 5 day forecast -->
                  <h2> 5-Day Forecast:</h2>
-                 
+
                  <div class="row" id="5dayforecast">
                   <div class="btn-group mr-2" role="group">
                     <button type="button" class="btn btn-primary"id="day1"><p id="temp1"></p>
@@ -75,36 +77,15 @@
                     <button type="button" class="btn btn-primary" id="day5"><p id= "temp5"></p>
                       <p id= "humid5"></p>
                       <p id="fifthicon"></p></button>
-                    <!-- <div class="col" class="fiveDay">
-                        <p id= "temp1"></p>
-                        <p id= "humid1"></p>
-                        <p id="firsticon"></p>
-                    </div>
-                    <div class="col" class="fiveDay">
-                        <p id= "temp2"></p>
-                        <p id= "humid2"></p>
-                        <p id="secondicon"></p>
-                    </div>
-                    <div class="col" class="fiveDay">
-                        <p id= "temp3"></p>
-                        <p id= "humid3"></p>
-                        <p id="thirdicon"></p>
-                    </div>
-                    <div class="col" class="fiveDay">
-                        <p id= "temp4"></p>
-                        <p id= "humid4"></p>
-                        <p id="fourthicon"></p>
-                    </div>
-                    <div class="col" class="fiveDay">
-                        <p id= "temp5"></p>
-                        <p id= "humid5"></p>
-                        <p id="fifthicon"></p> -->
                     </div>
                 </div>
                 <br>
                 <br>
             </div>
             <div class="container">
+                    <!-- searched cities -->
+                    <div class = "container col-12 card border-0 shadow my-5" id="searchedCities">
+                      <ul id='searched-cities-list' class ="list-group"></ul>
             </div>
         </div>
     </div>
