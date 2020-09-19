@@ -10,6 +10,7 @@ a {
     color: white;
     font-size: 50px;
   }
+
 body {
     background: url('https://images.unsplash.com/photo-1561730174-a21aa0f47960?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -25,7 +26,7 @@ h1 {
   color: green;
 }
 .moderateUV {
- color: yellow
+ color: orange
 }
 .severeUV {
   color: red
@@ -34,6 +35,7 @@ h1 {
 p {
   font-size: 25px;
 }
+
 
 
   
