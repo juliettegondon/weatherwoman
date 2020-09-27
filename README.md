@@ -5,5 +5,5 @@ The user can also view a 5-day forecast that displays the date, the temperature,
 
 https://juliettegondon.github.io/weatherwoman/
 
-![Screen Shot 2020-09-19 at 11 23 24 AM (2)]
-![Screen Shot 2020-09-19 at 11 23 34 AM (2)]
+![Screen Shot 2020-09-19 at 11 23 24 AM (2)](https://user-images.githubusercontent.com/68354391/93670626-bb0ead00-fa6a-11ea-8f74-1ce6558ffd18.png)
+![Screen Shot 2020-09-19 at 11 23 34 AM (2)](https://user-images.githubusercontent.com/68354391/93670630-bea23400-fa6a-11ea-99b2-6332af64c89c.png)
